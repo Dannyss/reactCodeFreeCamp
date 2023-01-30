@@ -4,11 +4,17 @@ import '../stylesheets/testimonio.css'
 function Testimonio(props){
   return(
     <div className="contenedor-testimonio">
-      <img className="imagen-testimonio" src={require("../imagenes/Emma-testimonio.png")} alt="Foto de Emma"/>
+      <img className="imagen-testimonio" src={require(`../imagenes/${props.imagen}-testimonio.png`)} alt={"Descripcion "+props.descripcionAlt} />
         <div className="contenedor-texto-testimonio">
-          <p className="nombre-testimonio">{props.nombre} en {props.pais}</p>
-          <p className="cargo-testimonio">{props.cargo} en {props.empresa}</p>
-          <p className="texto-testimonio">{props.testimonio}</p>
+          <p className="nombre-testimonio">
+           <strong>{props.nombre}</strong> en {props.pais}
+          </p>
+          <p className="cargo-testimonio">
+            {props.cargo} en <strong>{props.empresa}</strong>
+          </p>
+          <p className="texto-testimonio">
+            "{props.testimonio}"
+          </p>
 
 
         </div>
